@@ -7,8 +7,9 @@ use App\Models\Stock;
 
 class ShopController extends Controller
 {
-    public function index() {
-        return view('shop');
+    public function index(Stock $stock) {
+        $stocks = $stock->stockDisplay();
+        return view('shop',compact('stocks'));
     }
 
     public function productCreate() {

@@ -24,6 +24,11 @@ class Stock extends Model
             'img_path' => 'required',
         ]);
 
+
+        /*******必須*******/
+        //コマンド:sail artisan storage:link
+        //[public/storage] link has been connected to [storage/app/public]
+        //storageとpublicを共有させる
         $this->name = $inputs['name'];
         $this->detail = $inputs['detail'];
         $this->fee = $inputs['fee'];
@@ -33,11 +38,11 @@ class Stock extends Model
         $this->img_path = $name;
         $this->save();
     }
+
+    public function stockDisplay() {
+        $items = Stock::all();
+        return $items;
+    }
 }
 
-/*
-***必須***
-コマンド:sail artisan storage:link
-[public/storage] link has been connected to [storage/app/public]
-storageとpublicを共有させる
-*/
+

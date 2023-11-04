@@ -15,6 +15,14 @@ use App\Http\Controllers\ShopController;
 |
 */
 
+// Language Switcher Route 言語切替用ルートだよ
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+
+    return redirect()->back();
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -39,3 +47,5 @@ Route::get('/productCreate',[ShopController::class,'productCreate'])->name('prod
 
 //商品登録
 Route::post('/productCreate',[ShopController::class,'productStore'])->name('productStore');
+
+
