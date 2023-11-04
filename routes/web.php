@@ -36,3 +36,6 @@ Route::get('/index',[ShopController::class,'index'])->name('shop');
 
 //商品登録ページ
 Route::get('/productCreate',[ShopController::class,'productCreate'])->name('productCreate');
+
+//商品登録
+Route::post('/productCreate',[ShopController::class,'productStore'])->name('productStore');
