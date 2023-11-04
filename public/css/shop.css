@@ -1,68 +1,97 @@
-.shop-container{
-    background-color:#F9FAFC;
+.shop-container {
+    background-color: #F9FAFC;
     padding: 30px 20px;
-    .item-container{
-      display: flex;
-      flex-wrap:wrap;
-      column-gap:1%;
-      row-gap:40px;
-      width: 90%;
-      margin-left:auto;
-      margin-right:auto;
-      margin-top: 50px;
-      .item{
-        width: 32.6%;
-        background-color:#fff;
-        padding: 2% 1%;
-        .addcart{
-          border:none;
-        }
-        p:nth-of-type(1){
-          line-height:1.3em;
-          margin-bottom: 10px;
-          text-align: center;
-        }
-        p:nth-of-type(2){
-          margin-top: 10px;
-        }
-        img{
-          width: 50%;
-          height:auto;
-          display: block;
-          margin-left:auto;
-          margin-right:auto;
-        }
-        form{
-          margin-top: 20px;
-          width:fit-content;
-          margin-left:auto;
-          margin-right:auto;
-        }
-      }
-    }
-    h1{
-      font-size: 25px;
-      text-align: center;
-    }
-  }
-.productCreate-container{
+}
+
+.shop-container .item-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1%;
+    row-gap: 40px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.shop-container .item-container .item {
+    width: 32.6%;
+    background-color: #fff;
+    padding: 2% 1%;
+}
+
+.shop-container .item-container .item .addcart {
+    border: none;
+}
+
+.shop-container .item-container .item p:nth-of-type(1) {
+    line-height: 1.3em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.shop-container .item-container .item p:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+.shop-container .item-container .item img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shop-container .item-container .item form {
+    margin-top: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shop-container h1 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.productCreate-container {
     width: 600px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 3%;
     padding-bottom: 3%;
-    .title-wrap,.img-wrap,.detail-wrap,.fee-wrap,.submit-wrap{
-        margin-top: 20px;
-    }
-    .detail-wrap{
-        textarea{
-            vertical-align:top;
-            width: 65%;
-        }
-    }
-    h1{
-        font-weight: bold;
-        font-size: 20px;
-        text-align: center;
-    }
+}
+
+.productCreate-container .flash {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.productCreate-container .error li {
+    margin-bottom: 5px;
+    color: red;
+}
+
+.productCreate-container .error li:last-child {
+    margin-bottom: 20px;
+}
+
+.productCreate-container .title-wrap,
+.productCreate-container .img-wrap,
+.productCreate-container .detail-wrap,
+.productCreate-container .fee-wrap,
+.productCreate-container .submit-wrap {
+    margin-top: 20px;
+}
+
+.productCreate-container .detail-wrap textarea {
+    vertical-align: top;
+    width: 65%;
+}
+
+.productCreate-container h1 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 }
