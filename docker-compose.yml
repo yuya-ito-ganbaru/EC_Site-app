@@ -108,8 +108,6 @@ services:
        ports:
            - 8888:80
        environment:
-           MYSQL_USERNAME: '${DB_USERNAME}'
-           MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
            PMA_HOST: mysql
        networks:
            - sail
