@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('detail');
+            $table->integer('fee');
+            $table->string('img_path');
             $table->timestamps();
         });
     }
