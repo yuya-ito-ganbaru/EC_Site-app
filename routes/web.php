@@ -48,4 +48,11 @@ Route::get('/productCreate',[ShopController::class,'productCreate'])->name('prod
 //商品登録
 Route::post('/productCreate',[ShopController::class,'productStore'])->name('productStore');
 
+//マイカートページ
+Route::get('/mycart',[ShopController::class,'myCart'])->name('mycart')->middleware('auth');
 
+//商品をマイカートに追加
+Route::post('/addmycart',[ShopController::class,'addmycart'])->name('addmycart');
+
+//マイカートに追加した商品の削除
+Route::post('/cartdelete',[ShopController::class,'deleteCart'])->name('cartdelete');

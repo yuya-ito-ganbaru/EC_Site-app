@@ -22,6 +22,12 @@
                     <img src="{{asset('storage/images/'.$stock->img_path)}}" alt="">
                 </div>
                 <p>{{$stock->detail}}</p>
+
+                <form action="{{route('addmycart')}}" method="post" class="form">
+                    @csrf
+                    <input type="hidden" name="stock_id" value="{{$stock->id}}">
+                    <input type="submit" value="カートに入れる" class="addcart">
+                </form>
             </div>
             @endforeach
         </div>
