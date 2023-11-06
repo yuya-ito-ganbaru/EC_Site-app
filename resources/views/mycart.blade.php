@@ -30,6 +30,15 @@
                     </form>
                 </div>
                 @endforeach
+
+                <div class="purchase">
+                    <p>個数:{{$count}}個</p>
+                    <p>合計金額:{{number_format($sum)}}円</p>
+                    <form action="{{route('purchase')}}" method="post">
+                        @csrf
+                        <input type="submit" value="購入する" id="button">
+                    </form>
+                </div>
             @else
             <p class="empty">カートは空っぽです</p>
             @endif
@@ -37,6 +46,7 @@
             <a href="{{route('shop')}}" class="index">商品一覧ページ</a>
         </div>
     </div>
+    <script src="{{ asset('js/common.js') }}"></script>
 </body>
 
 </html>

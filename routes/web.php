@@ -52,7 +52,16 @@ Route::post('/productCreate',[ShopController::class,'productStore'])->name('prod
 Route::get('/mycart',[ShopController::class,'myCart'])->name('mycart')->middleware('auth');
 
 //商品をマイカートに追加
-Route::post('/addmycart',[ShopController::class,'addmycart'])->name('addmycart');
+Route::post('/addmycart',[ShopController::class,'addmycart'])->name('addmycart')->middleware('auth');
 
 //マイカートに追加した商品の削除
 Route::post('/cartdelete',[ShopController::class,'deleteCart'])->name('cartdelete');
+
+//マイカートに追加した商品の購入
+Route::post('/purchase',[ShopController::class,'purchase'])->name('purchase');
+
+//購入ページをリロード
+Route::get('/purchase',[ShopController::class,'redirect'])->name('shop');
+
+//管理画面の表示
+Route::get('/admin',[ShopController::class,'admin'])->name('admin')->middleware('auth');

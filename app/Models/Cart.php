@@ -34,6 +34,13 @@ class Cart extends Model
     public function showCart() {
         $user_id = Auth::id();
         $data['my_carts'] = Cart::where('user_id',$user_id)->get();
+        $data['count'] = 0;
+        $data['sum'] = 0;
+
+        foreach ($data['my_carts'] as $my_cart) {
+            $data['count']++;
+            $data['sum'] += $my_cart->stock->fee;
+        }
 
         return $data;
     }
@@ -47,5 +54,11 @@ class Cart extends Model
             $message = '削除に失敗しました';
         }
         return $message;
+    }
+
+    public function purchaseCart() {
+        $user_id = Auth::id();
+        $purchase_items = $this->where('user_id',$user_id)->delete();
+        //dd($purchase_items);
     }
 }
